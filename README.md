@@ -1,4 +1,5 @@
-# vue-doro
+# vue-doro 
+## Projeto do Curso Vue Js na prática - Prof Igor Souto 
 
 ## Project setup
 ```

@@ -7,6 +7,7 @@ module.exports = {
       stylus: {
         import: [
           path.resolve(__dirname, 'src/styles/variables.styl'),
+          path.resolve(__dirname, 'src/styles/mixins.styl'),
         ],
       },
     },
