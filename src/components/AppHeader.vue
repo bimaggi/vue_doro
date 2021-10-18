@@ -21,11 +21,15 @@ export default {
 <style lang="stylus">
 .header
   alignCenter()
+
 .header__logo
   alignCenter()
   gap 1rem
+
 .logo__image
   width 3.8rem
+
 .logo__title
   font-size 2rem
+
 </style>
