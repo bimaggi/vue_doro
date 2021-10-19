@@ -20,23 +20,50 @@
         </button>
       </header>
       <main class="modal__content">
-        <form>
+        <form @submit.prevent="setAdjustments">
           <div class="content__form">
             <div class="form__input">
-              <label for="" class="input__label">Tempo focado</label>
-              <input class="input__field" type="text">
+              <label for="focus" class="input__label">Tempo focado</label>
+              <input
+                class="input__field"
+                type="text"
+                v-model="adjustments.focus"
+                id="focus"
+                v-mask="'##:##'"
+                >
+                <!-- Instalei vue-the-mask para permitir inserir no input apenas a mascar que vamos cadastrar aqui no v-mask
+                dentro do v-mask passei uma string, pq defini que o contador é uma string
+                e o jogo da velha significa aqui, que o caracter recebido será um numero-->
             </div>
             <div class="form__input">
-              <label for="" class="input__label">Pequena pausa</label>
-              <input class="input__field" type="text">
+              <label for="short" class="input__label">Pequena pausa</label>
+              <input
+                class="input__field"
+                type="text"
+                v-model="adjustments.shortBreak"
+                id="short"
+                v-mask="'##:##'"
+                >
             </div>
             <div class="form__input">
-              <label for="" class="input__label">Longa pausa</label>
-              <input class="input__field" type="text">
+              <label for="long" class="input__label">Longa pausa</label>
+              <input
+                class="input__field"
+                type="text"
+                v-model="adjustments.longBreak"
+                id="long"
+                v-mask="'##:##'"
+              >
             </div>
             <div class="form__input">
-              <label for="" class="input__label">Nº de pausas</label>
-              <input class="input__field" type="text">
+              <label for="rounds" class="input__label">Nº de pausas</label>
+              <input
+                class="input__field"
+                type="number"
+                v-model="adjustments.rounds"
+                id="rounds"
+                min="0"
+              >
             </div>
           </div>
           <div class="content__footer">
@@ -55,18 +82,44 @@
 </template>
 
 <script>
+import { mask } from 'vue-the-mask'
 import {
   XIcon,
 } from 'vue-feather-icons'
+import timer from '@/enums/timer'
+
+const {
+  FOCUS,
+  SHORT,
+  LONG,
+  ROUNDS,
+} = timer
 
 export default {
   name: 'ActionAdjustments',
   components: {
     XIcon,
   },
+  directives: { mask },
+  // mask é uma diretiva customizada, ou seja, podemos criar diretivas e
+  // atribuir uma lógica particular para ela.
+  data() {
+    return {
+      adjustments: {
+        focus: FOCUS.TIME,
+        shortBreak: SHORT.TIME,
+        longBreak: LONG.TIME,
+        rounds: ROUNDS,
+      },
+    }
+  },
   methods: {
     close() {
       this.$emit('close')
+    },
+    setAdjustments() {
+      this.$emit('setAdjustments', this.adjustments)
+      this.close()
     },
   },
 }
@@ -139,6 +192,7 @@ export default {
   outline none
   transition all .1s linear
   addShadow()
+  text-align: center
 
 .content__footer
   justifyCenter()

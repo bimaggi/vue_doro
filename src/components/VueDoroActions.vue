@@ -30,6 +30,7 @@
     <action-adjustments
       v-show="isShowingAdjustments"
       @close="toggleModal"
+      @setAdjustments="setAdjustments"
     />
   </div>
 </template>
@@ -67,6 +68,9 @@ export default {
     },
     toggleModal() {
       this.isShowingAdjustments = !this.isShowingAdjustments
+    },
+    setAdjustments(adjustments) {
+      this.$emit('setAdjustments', adjustments)
     },
   },
 }

@@ -6,7 +6,7 @@ export default {
   },
   SHORT: {
     LABEL: 'Pequena pausa',
-    TIME: '5:00',
+    TIME: '05:00',
   },
   LONG: {
     LABEL: 'Longa pausa',
