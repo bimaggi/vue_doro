@@ -3,13 +3,15 @@
     <app-header/>
     <main class="page__main">
       <h2 class="main__step-title">{{ actualStep.title }}</h2>
-      <div class="main__timer">
-        {{ actualStep.time }}
-      </div>
+      <vue-doro-timer
+        :timer="actualStep.time"
+        :is-playing="isPlaying"
+      />
       <span class="main__rounds">{{actualRound}}/{{rounds}} de hora </span>
       <vue-doro-actions
         @skipStep="setNextStep"
         @toogleIsPlaying="setIsPlaying"
+        @setAdjustments="setSteps"
       />
     </main>
   </div>
@@ -18,6 +20,7 @@
 <script>
 import AppHeader from '@/components/AppHeader'
 import VueDoroActions from '@/components/VueDoroActions'
+import VueDoroTimer from '@/components/VueDoroTimer'
 import timer from '@/enums/timer'
 
 const {
@@ -32,6 +35,7 @@ export default {
   components: {
     AppHeader,
     VueDoroActions,
+    VueDoroTimer,
   },
   data() {
     return {
@@ -52,6 +56,7 @@ export default {
           time: LONG.TIME,
         },
       },
+      isPlaying: false,
     }
   },
   created() {
@@ -76,7 +81,10 @@ export default {
     },
     setIsPlaying(value) {
       // esse value é o valor que estamos passando no segundo parametro do emit
-      console.log('tocando', value)
+      this.isPlaying = value
+    },
+    setSteps(adjustments) {
+      console.log(adjustments)
     },
   },
 }
@@ -116,9 +124,6 @@ export default {
     font-weight 400
     @media screen and (max-width $mobile)
       font-size 1.7rem
-
-  .main__timer
-    font-size 6rem
 
   .main__rounds
     letter-spacing .1rem
