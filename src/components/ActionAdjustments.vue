@@ -31,9 +31,10 @@
                 id="focus"
                 v-mask="'##:##'"
                 >
-                <!-- Instalei vue-the-mask para permitir inserir no input apenas a mascar que vamos cadastrar aqui no v-mask
-                dentro do v-mask passei uma string, pq defini que o contador é uma string
-                e o jogo da velha significa aqui, que o caracter recebido será um numero-->
+                <!-- Instalei vue-the-mask para permitir inserir no input apenas
+                a mascar que vamos cadastrar aqui no v-mask dentro do v-mask passei uma string,
+                pq defini que o contador é uma string e o jogo da velha significa aqui,
+                que o caracter recebido será um numero-->
             </div>
             <div class="form__input">
               <label for="short" class="input__label">Pequena pausa</label>
@@ -56,7 +57,7 @@
               >
             </div>
             <div class="form__input">
-              <label for="rounds" class="input__label">Nº de pausas</label>
+              <label for="rounds" class="input__label">Rounds</label>
               <input
                 class="input__field"
                 type="number"
