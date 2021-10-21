@@ -35,7 +35,7 @@ export default {
     isPlaying: {
       // o vue não aceita que eu escreva aqui na props dessa forma=>
       // is-playing, por isso tive que passar desta forma
-      // mas este is Playing é o is-playing
+      // mas este is Playing é o is-playing lá do VueDoro
       type: Boolean,
       required: true,
     },
@@ -56,8 +56,8 @@ export default {
     },
   },
   mounted() {
-    this.setTimerWitdh()
-    window.addEventListener('resize', this.setTimerWitdh)
+    this.setTimerWidth()
+    window.addEventListener('resize', this.setTimerWidth)
     this.setActualTimer(this.timer)
   },
   watch: {
@@ -123,11 +123,11 @@ export default {
     changePageTitle(value) {
       document.title = value
     },
-    setTimerWitdh() {
-      const { witdh } = window.screen
-      if (witdh <= 450) this.timerDiameter = 300
-      if (witdh < 350) this.timerDiameter = 250
-      if (witdh > 450) this.timerDiameter = 400
+    setTimerWidth() {
+      const { width } = window.screen
+      if (width <= 450) this.timerDiameter = 300
+      if (width < 350) this.timerDiameter = 250
+      if (width > 450) this.timerDiameter = 400
     },
   },
 }
