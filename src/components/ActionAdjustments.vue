@@ -181,6 +181,9 @@ export default {
   row-gap 2rem
   column-gap 4rem
   margin 4rem 0
+  @media screen and (max-width $mobile)
+    justify-content space-between
+    grid-template-columns repeat(2,40%)
 
 .form__input
   display flex
@@ -191,6 +194,8 @@ export default {
   text-align center
   font-size 1.4rem
   margin-bottom .3rem
+  @media screen and (max-width $mobile)
+    font-size: 1.2rem
 
 .input__field
   width 100%
@@ -216,6 +221,8 @@ export default {
   padding .5rem .3rem
   width 35%
   cursor pointer
+  @media screen and (max-width $mobile)
+    width 45%
 
 .modal--fade-enter, .modal--fade--leave-active
   opacity 0
