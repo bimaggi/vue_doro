@@ -15,6 +15,7 @@
         @setAdjustments="setAdjustments"
       />
     </main>
+    <app-footer />
   </div>
 </template>
 
@@ -22,6 +23,7 @@
 import AppHeader from '@/components/AppHeader'
 import VueDoroActions from '@/components/VueDoroActions'
 import VueDoroTimer from '@/components/VueDoroTimer'
+import AppFooter from '@/components/AppFooter'
 import timer from '@/enums/timer'
 
 const {
@@ -37,6 +39,7 @@ export default {
     AppHeader,
     VueDoroActions,
     VueDoroTimer,
+    AppFooter,
   },
   data() {
     return {
