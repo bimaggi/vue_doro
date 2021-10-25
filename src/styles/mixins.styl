@@ -2,15 +2,19 @@ alingCenter()
   display flex
   align-items center
 
-justifyCenter()
-    display flex
-	justify-content center
+pageStatusGradient(endColor)
+  background linear-gradient(180deg, #fff -8%, rgba(#fff, 0) 100%),endColor
 
 hoverTransition()
-	transition background-color linear .3s
+	transition background-color linear 0.3s
 	&:hover 
-		background-color rgba(#000, .09)
+		background-color rgba(#000, 0.2)
 		transition @transition
 
+justifyCenter()
+  display flex
+  justify-content center
+
 addShadow()
-    box-shadow 0 1px 3px rgba(#000, .12), 0 1px 2px rgba(#000, .24 )
+  box-shadow 0 1px 3px rgba(#000, .12), 0 1px 2px rgba(#000, .24 )
+  

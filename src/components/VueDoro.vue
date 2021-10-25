@@ -115,9 +115,6 @@ export default {
 }
 </script>
 <style lang="stylus">
-  pageStatusGradient(endColor)
-  background linear-gradient(180deg, #fff -8%, rgba(#fff, 0) 100%),endColor
-
   .page
     display grid
     grid-row-gap 0.9rem
@@ -127,15 +124,15 @@ export default {
 
   .page--focus
     @extends .page
-    pageStatusGradient($cosmos)
+    pageStatusGradient($BlanchedAlmond)
 
   .page--short
     @extends .page
-    pageStatusGradient($pattens-blue)
+    pageStatusGradient($lavanda)
 
   .page--long
     @extends .page
-    pageStatusGradient($tana)
+    pageStatusGradient($LightCyan)
 
   .page__main
     display grid

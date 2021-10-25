@@ -20,7 +20,7 @@
         </button>
       </header>
       <main class="modal__content">
-        <form @submit.prevent="setAdjustments">
+        <form @submit.prevent="setAdjustments" :disabled="validate">
           <div class="content__form">
             <div class="form__input">
               <label for="focus" class="input__label">Tempo focado</label>
@@ -112,6 +112,7 @@ export default {
         longBreak: LONG.TIME,
         rounds: ROUNDS,
       },
+      validate: null,
     }
   },
   methods: {
@@ -119,8 +120,15 @@ export default {
       this.$emit('close')
     },
     setAdjustments() {
-      this.$emit('setAdjustments', this.adjustments)
-      this.close()
+      if (this.adjustments.focus.length < 5
+      || this.adjustments.shortBreak.length < 5
+      || this.adjustments.longBreak.length < 5) {
+        this.validate = true
+      } else {
+        this.validate = false
+        this.$emit('setAdjustments', this.adjustments)
+        this.close()
+      }
     },
   },
 }
@@ -197,7 +205,6 @@ export default {
 
 .content__footer
   justifyCenter()
-  justify-content center
 
 .footer__confirm
   background-color transparent
