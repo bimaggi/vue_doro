@@ -1,12 +1,12 @@
 # VueDoro
-## Project developed in Vuejs course - Igor Souto 
+# Project developed in Vuejs course - Igor Souto 
 
-### The purpose of the Pomodoro technique implemented in this project is to help managing our time better, increase focus and concentration on our tasks.You can adjust the focus time and breaks according to your needs.
+ The purpose of the Pomodoro technique implemented in this project is to help managing our time better, increase focus and concentration on our tasks.You can adjust the focus time and breaks according to your needs.
 
-<img src= 'file:///home/bimaggi/Downloads/21.jpg' style="width:200px;">
-<img src= 'file:///home/bimaggi/Downloads/22.jpg' style="width:200px;">
-<img src= 'file:///home/bimaggi/Downloads/23.jpg' style="width:200px;">
-<img src= 'file:///home/bimaggi/Downloads/24.jpg' style="width:200px;">
+<img src= 'https://home/bimaggi/Downloads/21.jpg' style="width:200px;">
+<img src= 'https://home/bimaggi/Downloads/22.jpg' style="width:200px;">
+<img src= 'https://home/bimaggi/Downloads/23.jpg' style="width:200px;">
+<img src= 'https://home/bimaggi/Downloads/24.jpg' style="width:200px;">
 
 ## Made with
 * Vue.js
