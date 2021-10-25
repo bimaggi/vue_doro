@@ -7,9 +7,9 @@ conforme o tempo for avançando -->
     :total-steps="timerTotalSteps"
     :stroke-width="5"
     :inner-stroke-width="2"
-    inner-stroke-color="#888"
-    start-color="#888"
-    stop-color="#888"
+    inner-stroke-color="#A9A9A9"
+    start-color="#7CFC00"
+    stop-color="#7CFC00"
     :is-clockwise="false"
 >
   <span class="timer__numbers">{{ actualTimer }}</span>
