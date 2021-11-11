@@ -1,7 +1,7 @@
 <template>
     <footer>
     <p>
-        <a href="https://www.linkedin.com/in/marcia-bimaggi-marcia-beserra-de-oliveira-9303801b9/"
+        <a href="https://www.linkedin.com/in/marcia-b-oliveira/"
           class="footer_link"
           target="_blank">
         <strong>
